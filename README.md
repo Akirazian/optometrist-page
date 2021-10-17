@@ -1,1 +1,1 @@
-A dynamically built website for a local optometrist's built and bundled with webpack.
+A dynamically built website for a local optometrist's office built and bundled with webpack.
