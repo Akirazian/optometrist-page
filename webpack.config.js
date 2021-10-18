@@ -1,9 +1,20 @@
 const path = require('path');
+const mode = "development";
+const devtool = (mode === 'development') ? 'eval' : 'source-map';
+
 
 module.exports = {
-  entry: './src/index.js',
+  mode,
+  entry: {
+    index: './src/index.js',
+  },
+  devtool,
+  devServer: {
+    static: './dist',
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
 };
