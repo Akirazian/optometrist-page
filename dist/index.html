@@ -3,11 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Restaurant Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer src="main.js"></script>
 </head>
   <body>
-    <div id="content"></div>
+    <div id="content">
+      <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src="optometrist.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" height="200">
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start"></div>
+          <div class="navbar-end">
+            <a href="#" class="navbar-item is-tab">Home</a>
+            <a href="#" class="navbar-item is-tab">Services</a>
+            <a href="#" class="navbar-item is-tab">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </div>
   </body>
 </html>

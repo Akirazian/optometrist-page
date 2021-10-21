@@ -1,1 +1,3 @@
-alert("It works!")
+import navHelper from "./navHelper";
+
+navHelper();
