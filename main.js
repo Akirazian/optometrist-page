@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log(\"bye!\")\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("const navBurger = document.querySelector(\".navbar-burger\");\nconst navMenu = document.querySelector(\".navbar-menu\")\n\nnavBurger.addEventListener(\"click\", toggleMenu);\n\nfunction toggleMenu() {\n  navBurger.classList.toggle(\"is-active\");\n  navMenu.classList.toggle(\"is-active\");\n}\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
 
 /***/ })
 
