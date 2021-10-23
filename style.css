@@ -5,3 +5,20 @@
 .navbar-brand {
   font-size: 1.5rem;
 }
+
+.home-content {
+  max-width: 960px !important;
+}
+
+.address {
+  font-size: 1.2rem;
+}
+
+#window {
+  max-height: 640px;
+}
+
+main {
+  background-color: rgb(250, 250, 250);
+  height: 100vh;
+}
