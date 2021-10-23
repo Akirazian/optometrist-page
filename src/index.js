@@ -1,6 +1,7 @@
-import buildHeader from "./header";
-import buildHome from "./homepage";
-import navHelper from "./navHelper";
+import buildHeader from "./scripts/header";
+import buildHome from "./scripts/homepage";
+import navHelper from "./scripts/navHelper";
+import './scripts/style.css';
 
 const content = document.getElementById("content");
 

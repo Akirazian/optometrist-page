@@ -55,7 +55,7 @@ const buildHome = () => {
     figure.classList.add("image");
 
     const image = document.createElement("img");
-    image.src = "frontdoor.jpg";
+    image.src = "../src/assets/frontdoor.jpg";
     image.alt = "The front door of our office";
 
     //build text column
