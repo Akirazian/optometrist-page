@@ -1,7 +1,7 @@
 const buildHeader = () => {
 
   const navbar = document.createElement("nav");
-  navbar.classList.add("navbar", "is-spaced", "is-dark");
+  navbar.classList.add("navbar", "is-spaced", "block", "is-dark");
   navbar.ariaLabel = "main navigation"
 
   const buildBrand = () => {
@@ -43,19 +43,22 @@ const buildHeader = () => {
     const navbarEnd = document.createElement("navbar-end");
     navbarEnd.classList.add("navbar-end");
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       const link = document.createElement("a");
       link.classList.add("navbar-item", "is-tab");
       link.href = "#"
 
       switch (i) {
         case 0:
-          link.innerText = "Our Doctors";
+          link.innerText = "Hours & Location";
           break;
         case 1:
-          link.innerText = "Services";
+          link.innerText = "Our Doctors";
           break;
         case 2:
+          link.innerText = "Services";
+          break;
+        case 3:
           link.innerText = "Contact";
           break;
       }
@@ -69,7 +72,7 @@ const buildHeader = () => {
 
   buildBrand();
   buildMenu();
-  container.append(navbar);
+  content.prepend(navbar);
 }
 
 export default buildHeader;
