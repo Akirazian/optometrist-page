@@ -5,7 +5,7 @@ import './scripts/style.css';
 
 const content = document.getElementById("content");
 
-content.innerHTML = "";
+content.innerText = "";
 
 buildHeader();
 navHelper();
