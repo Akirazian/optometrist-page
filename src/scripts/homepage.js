@@ -1,8 +1,9 @@
 import frontdoor from "../assets/frontdoor.jpg"
+import buildYelp from "./yelp";
 
 const buildHome = () => {
   const homepage = document.createElement("div");
-  homepage.classList.add("container", "home-content");
+  homepage.classList.add("container", "home-content", "mb-5");
 
   const buildLevel = () => {
     const level = document.createElement("div");
@@ -67,26 +68,29 @@ const buildHome = () => {
     const h1 = document.createElement("h1");
     h1.innerText = "Revolution Eyes";
     const p1 = document.createElement("p");
-    p1.innerText = "We provide best-in-class eye care for children and adults, and offer a wide selection of luxury eyeglass brands.";
+    p1.innerText = "We provide best-in-class eye care for adults and children, and offer a wide selection of luxury eyeglass brands.";
     const p2 = document.createElement("p");
     p2.innerText = "Servicing downtown Manhattan since 2014";
-    // const yelp = document.createElement("span");
-    // yelp.innerHTML = `<span class="yelp-review" data-review-id="6-7T6IXF-1CDZli7rPcdqQ" data-hostname="www.yelp.com">Read <a href="https://www.yelp.com/user_details?userid=RdX1SalK7ZZQEPmtD1n3Kg" rel="nofollow noopener">Peter C.</a>'s <a href="https://www.yelp.com/biz/revolution-eyes-new-york-2?hrid=6-7T6IXF-1CDZli7rPcdqQ" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/TAjwJqwGJXsPiMN106DWvQ" rel="nofollow noopener">Revolution Eyes</a> on <a href="https://www.yelp.com" rel="nofollow noopener">Yelp</a><script src="https://www.yelp.com/embed/widgets.js" type="text/javascript" async></script></span>`;
     const map = document.createElement("iframe");
     map.src = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12096.518601525015!2d-74.0097192!3d40.7151623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x94d3d09046292216!2sRevolution%20Eyes!5e0!3m2!1sen!2sus!4v1635041500047!5m2!1sen!2sus";
+    map.id = "map";
     map.allowFullscreen = "";
 
     const hr = document.createElement("hr");
 
     figure.appendChild(image);
     imageContainer.appendChild(figure);
-    homepageText.append(h1, p1, p2, hr, map, );
+    homepageText.append(h1, p1, p2, hr, map);
     homepageMain.append(imageContainer, homepageText);
     homepage.appendChild(homepageMain);
   }
 
+  const hr = document.createElement("hr");
+
   buildLevel();
   buildMain();
+  homepage.appendChild(hr);
+  homepage.appendChild(buildYelp());
   content.appendChild(homepage);
 }
 
