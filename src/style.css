@@ -8,26 +8,28 @@
 
 .home-content {
   max-width: 960px !important;
+  font-size: 17px;
 }
 
 .address {
   font-size: 1.2rem;
 }
 
-#window {
-  max-height: 640px;
-}
-
 main {
-  background-color: rgb(250, 250, 250);
+  background-color: #FFFFFF;
   height: 100%;
-  width: 100vw;
+  width: auto;
 }
 
 #map {
   width: 100%;
-  height: 365px;
+  height: 325px;
   border: 0;
+}
+
+#window {
+  max-height: 400px;
+  max-width: 600px;
 }
 
 iframe {
