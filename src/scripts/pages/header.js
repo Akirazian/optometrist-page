@@ -1,4 +1,8 @@
+import makeElement from "../helpers/makeElement";
+
 const buildHeader = () => {
+
+  const body = document.querySelector("body");
 
   const navbar = document.createElement("header");
   navbar.classList.add("navbar", "is-spaced", "is-dark");
@@ -10,11 +14,10 @@ const buildHeader = () => {
 
     const brand = document.createElement("a");
     brand.classList.add("navbar-item");
+    brand.id = "brand";
     brand.href = "#";
 
-    const revolution = document.createElement("span");
-    revolution.style = "color: orange;";
-    revolution.innerText = "Revolution";
+    const revolution = makeElement("span", "revolution",  ["revolution", "brand"], "Revolution");
     const eyes = document.createElement("span");
     eyes.innerText = "Eyes";
 
@@ -47,16 +50,17 @@ const buildHeader = () => {
       const link = document.createElement("a");
       link.classList.add("navbar-item", "is-tab");
       link.href = "#"
-      link.id = i;
-
       switch (i) {
         case 0:
+          link.id = "aboutUs";
           link.innerText = "About Us";
           break;
         case 1:
+          link.id = "services"
           link.innerText = "Services";
           break;
         case 2:
+          link.id = "contact"
           link.innerText = "Contact";
           break;
       }
@@ -68,10 +72,49 @@ const buildHeader = () => {
     navbar.append(navbarMenu);
   }
 
+  const buildLevel = () => {
+    const level = document.createElement("div");
+    level.classList.add("level", "is-mobile", "mt-5");
+  
+    const addressContainer = document.createElement("div");
+    addressContainer.classList.add("level-item", "has-text-centered");
+  
+    const address = document.createElement("div");
+    address.classList.add("address");
+  
+    for (let i = 0; i < 2; i++) {
+      const line = document.createElement("p");
+      switch (i) {
+        case 0:
+          line.innerText = "82 West Broadway";
+          break;
+        case 1:
+          line.innerText = "New York, NY 10007";
+          break;       
+      }
+      address.appendChild(line);
+    }
+  
+    const phoneContainer = document.createElement("div");
+    phoneContainer.classList.add("level-item", "has-text-centered");
+  
+    const phoneNumber = document.createElement("a");
+    phoneNumber.classList.add("button", "is-medium", "is-link", "is-light");
+    phoneNumber.href = "tel:212-609-1111";
+    phoneNumber.innerText = "212-608-1111";
+  
+    addressContainer.appendChild(address);
+    phoneContainer.appendChild(phoneNumber);
+    level.append(addressContainer, phoneContainer);
+  
+    const hr = document.createElement("hr");
+  
+    body.prepend(level, hr);
+  }
+
   buildBrand();
   buildMenu();
-
-  const body = document.querySelector("body");
+  buildLevel();
   body.prepend(navbar);
 }
 

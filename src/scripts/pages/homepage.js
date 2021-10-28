@@ -3,47 +3,7 @@ import yelpContainer from "../helpers/yelp";
 import makeElement from "../helpers/makeElement";
 import logo from "../../assets/logo.jpg"
 
-const homepage = makeElement("div", null, ["container", "home-content", "mb-5"]);
-
-const buildLevel = () => {
-  const level = document.createElement("div");
-  level.classList.add("level", "is-mobile");
-
-  const addressContainer = document.createElement("div");
-  addressContainer.classList.add("level-item", "has-text-centered");
-
-  const address = document.createElement("div");
-  address.classList.add("address");
-
-  for (let i = 0; i < 2; i++) {
-    const line = document.createElement("p");
-    switch (i) {
-      case 0:
-        line.innerText = "82 West Broadway";
-        break;
-      case 1:
-        line.innerText = "New York, NY 10007";
-        break;       
-    }
-    address.appendChild(line);
-  }
-
-  const phoneContainer = document.createElement("div");
-  phoneContainer.classList.add("level-item", "has-text-centered");
-
-  const phoneNumber = document.createElement("a");
-  phoneNumber.classList.add("button", "is-medium", "is-link", "is-light");
-  phoneNumber.href = "tel:212-609-1111";
-  phoneNumber.innerText = "212-608-1111";
-
-  addressContainer.appendChild(address);
-  phoneContainer.appendChild(phoneNumber);
-  level.append(addressContainer, phoneContainer);
-
-  const hr = document.createElement("hr");
-
-  homepage.append(level, hr);
-}
+const homepage = makeElement("div", null, ["container", "page", "mb-5"]);
 
 const buildMain = () => {
   const homepageMain = document.createElement("div");
@@ -85,7 +45,6 @@ const buildMain = () => {
 
 const hr = document.createElement("hr");
 
-buildLevel();
 buildMain();
 homepage.appendChild(hr);
 homepage.appendChild(yelpContainer);
