@@ -9,12 +9,9 @@ const buildHeader = () => {
   navbar.ariaLabel = "main navigation"
 
   const buildBrand = () => {
-    const navbarBrand = document.createElement("div");
-    navbarBrand.classList.add("navbar-brand");
+    const navbarBrand = makeElement("div", null, ["navbar-brand"]);
 
-    const brand = document.createElement("a");
-    brand.classList.add("navbar-item");
-    brand.id = "brand";
+    const brand = makeElement("a", "homepage", ["navbar-item"]);
     brand.href = "#";
 
     const revolution = makeElement("span", "revolution",  ["revolution", "brand"], "Revolution");
