@@ -1,6 +1,6 @@
 import makeElement from "../helpers/makeElement";
 import logo from "../../assets/logo.jpg";
-import sharmaPic from "../../assets/sharmaPlaceholder.jpg"
+import sharmaPic from "../../assets/default.jpg"
 
 const aboutUs = makeElement("div", "about-us", ["container", "page", "has-text-centered", "mb-5"]);
 
@@ -24,11 +24,11 @@ const doctorSection = (() => {
   const heading = makeElement("h1", null, null, "Our Doctors")
 
   const doctorSharma = (() => {
-    const doctorSharma = makeElement("div", null, ["content"]);
-    const imgContainer = makeElement("figure", null, ["image", "is-128x128"]);
+    const doctorSharma = makeElement("div", null, ["columns"]);
+    const imgContainer = makeElement("figure", null, ["image", "column", "is-one-quarter", "is-128x128"]);
     const image = makeElement("img", null, ["profile-pic", "is-rounded"]);
     image.src = sharmaPic;
-    const bio = makeElement("p", null, null, "Dr. Sharma has been treating patients for a long time!");
+    const bio = makeElement("p", null, ["column"], "Dr. Sharma has been treating patients for a long time!");
     
     imgContainer.appendChild(image);
     doctorSharma.append(imgContainer, bio);
