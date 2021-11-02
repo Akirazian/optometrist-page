@@ -11,16 +11,21 @@ const navHelper = (() => {
   const navBurger = document.querySelector(".navbar-burger");
   const navMenu = document.querySelector(".navbar-menu");
 
-  const start = () => navBurger.addEventListener("click", toggleMenu);
+  const start = () => navBurger.addEventListener("click", _toggleMenu);
 
-  function toggleMenu() {
+  function _toggleMenu() {
     navBurger.classList.toggle("is-active");
     navMenu.classList.toggle("is-active");
+  }
+
+  function closeMenu() {
+    navBurger.classList.remove("is-active");
+    navMenu.classList.remove("is-active");
   }
   
   return {
     start,
-    toggleMenu
+    closeMenu
   }
 })();
 
@@ -31,7 +36,7 @@ const page = (() => {
   const load = (page) => {
     content.innerText = "";
     content.appendChild(page);
-    navHelper.toggleMenu();
+    navHelper.closeMenu();
   }
 
   const change = (event) => {
@@ -52,7 +57,7 @@ const page = (() => {
   }
 })();
 
-page.load(aboutUs);
+page.load(homepage);
 navHelper.start();
 
 const links = document.querySelectorAll(".navbar-item");
