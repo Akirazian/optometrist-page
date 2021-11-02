@@ -55,4 +55,5 @@ footer {
 
 .profile-pic {
   border: 1px black solid;
+  position: relative;
 }

@@ -23,19 +23,33 @@ const doctorSection = (() => {
   const doctorSection = makeElement("div", null, ["content"]);
   const heading = makeElement("h1", null, null, "Our Doctors")
 
-  const doctorSharma = (() => {
-    const doctorSharma = makeElement("div", null, ["columns"]);
-    const imgContainer = makeElement("figure", null, ["image", "column", "is-one-quarter", "is-128x128"]);
+  const makeDoctor = (name, bio, school) => {
+    const doctor = makeElement("div", null, ["content", "doctor"]);
+    const imgContainer = makeElement("figure", null, ["image", "is-inline-block", "is-128x128"]);
     const image = makeElement("img", null, ["profile-pic", "is-rounded"]);
     image.src = sharmaPic;
-    const bio = makeElement("p", null, ["column"], "Dr. Sharma has been treating patients for a long time!");
+    const bioHeader = makeElement("h4", null, null, name)
+    const bio1 = makeElement("p", null, null, bio);
+    const bio2 = makeElement("p", null, null, school);
     
     imgContainer.appendChild(image);
-    doctorSharma.append(imgContainer, bio);
-    return doctorSharma;
-  })();
+    doctor.append(imgContainer, bioHeader, bio1, bio2);
+    return doctor;
+  };
 
-  doctorSection.append(heading, doctorSharma);
+  let doctorSharma = makeDoctor(
+    "Dr. Ashish Sharma, O.D.", 
+    "Dr. Sharma has been treating patients for a long time. He loves diagnosing patients and getting them great prescriptions for eyeglasses or contacts.", 
+    "Dr. Sharma studied at a good school for optometry.")
+
+  let doctorLee = makeDoctor(
+    "Dr. Jeremy Lee, O.D.",
+    "Dr. Lee has practiced optometry here for a bunch of time. Patients love him. He also likes reading good books about stuff.",
+    "Dr. Lee also went to a real great school for optometry"
+  )
+
+  doctorSection.append(heading, doctorSharma, doctorLee);
+  
 
   return doctorSection;
 })();
