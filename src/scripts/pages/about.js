@@ -1,6 +1,7 @@
 import makeElement from "../helpers/makeElement";
 import logo from "../../assets/logo.jpg";
 import sharmaPic from "../../assets/default.jpg"
+import leePic from "../../assets/default.jpg"
 
 const aboutUs = makeElement("div", "about-us", ["container", "page", "has-text-centered", "mb-5"]);
 
@@ -23,11 +24,11 @@ const doctorSection = (() => {
   const doctorSection = makeElement("div", null, ["content"]);
   const heading = makeElement("h1", null, null, "Our Doctors")
 
-  const makeDoctor = (name, bio, school) => {
+  const makeDoctor = (name, bio, school, img) => {
     const doctor = makeElement("div", null, ["content", "doctor"]);
     const imgContainer = makeElement("figure", null, ["image", "is-inline-block", "is-128x128"]);
     const image = makeElement("img", null, ["profile-pic", "is-rounded"]);
-    image.src = sharmaPic;
+    image.src = img;
     const bioHeader = makeElement("h4", null, null, name)
     const bio1 = makeElement("p", null, null, bio);
     const bio2 = makeElement("p", null, null, school);
@@ -40,16 +41,18 @@ const doctorSection = (() => {
   let doctorSharma = makeDoctor(
     "Dr. Ashish Sharma, O.D.", 
     "Dr. Sharma has been treating patients for a long time. He loves diagnosing patients and getting them great prescriptions for eyeglasses or contacts.", 
-    "Dr. Sharma studied at a good school for optometry.")
+    "Dr. Sharma studied at a good school for optometry.",
+    sharmaPic)
 
   let doctorLee = makeDoctor(
     "Dr. Jeremy Lee, O.D.",
     "Dr. Lee has practiced optometry here for a bunch of time. Patients love him. He also likes reading good books about stuff.",
-    "Dr. Lee also went to a real great school for optometry"
+    "Dr. Lee also went to a real great school for optometry",
+    leePic
   )
 
   doctorSection.append(heading, doctorSharma, doctorLee);
-  
+
 
   return doctorSection;
 })();
