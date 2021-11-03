@@ -57,7 +57,7 @@ const page = (() => {
   }
 })();
 
-page.load(homepage);
+page.load(aboutUs);
 navHelper.start();
 
 const links = document.querySelectorAll(".navbar-item");

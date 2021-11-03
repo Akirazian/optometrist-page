@@ -55,5 +55,14 @@ footer {
 
 .profile-pic {
   border: 1px black solid;
-  position: relative;
+}
+
+.doctor {
+  display: flex;
+  align-items: center;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
 }
