@@ -2,6 +2,7 @@ import buildHeader from "./scripts/pages/header";
 import homepage from "./scripts/pages/homepage";
 import buildFooter from "./scripts/pages/footer";
 import aboutUs from "./scripts/pages/about";
+import services from "./scripts/pages/services";
 import './style.css';
 
 buildHeader();
@@ -48,6 +49,9 @@ const page = (() => {
       case "aboutUs":
         load(aboutUs);
         break;
+      case "services":
+        load(services);
+        break;
     }
   }
   
@@ -57,7 +61,7 @@ const page = (() => {
   }
 })();
 
-page.load(aboutUs);
+page.load(homepage);
 navHelper.start();
 
 const links = document.querySelectorAll(".navbar-item");

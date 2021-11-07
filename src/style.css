@@ -66,3 +66,7 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
+.list {
+  list-style: inside !important;
+}
