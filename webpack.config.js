@@ -1,5 +1,5 @@
 const path = require('path');
-const mode = "production";
+const mode = "development";
 const devtool = (mode === 'development') ? 'eval' : 'source-map';
 
 
