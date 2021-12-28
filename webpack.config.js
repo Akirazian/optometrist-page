@@ -1,6 +1,6 @@
 const path = require('path');
 const mode = "development";
-const devtool = (mode === 'development') ? 'eval' : 'source-map';
+const devtool = (mode === 'development') ? 'eval-source-map' : 'source-map';
 
 
 module.exports = {

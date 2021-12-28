@@ -3,6 +3,7 @@ import homepage from "./scripts/pages/homepage";
 import buildFooter from "./scripts/pages/footer";
 import aboutUs from "./scripts/pages/about";
 import services from "./scripts/pages/services";
+import contact from "./scripts/pages/contact";
 import './style.css';
 
 buildHeader();
@@ -51,6 +52,9 @@ const page = (() => {
         break;
       case "services":
         load(services);
+        break;
+      case "contact":
+        load(contact);
         break;
     }
   }

@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack --progress --mode=production"
   },
   "author": "Akiraz",
   "license": "ISC",

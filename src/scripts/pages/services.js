@@ -1,13 +1,19 @@
 import makeElement from "../helpers/makeElement";
 import frontdoor from "../../assets/frontdoor.jpg";
+import logo from "../../assets/logo.jpg";
 
 const services = makeElement("div", "services", ["container", "page", "mb-5"]);
 const hr = makeElement("hr");
 
 const intro = (() => {
+  const imageContainer = makeElement("figure", null, ["image", "mb-3"]);
+  const image = makeElement("img", "logo");
+  image.src = logo;
+  imageContainer.appendChild(image);
+
   let container = makeElement("div", null, ["content", "mb-7", "has-text-centered"]);
   const header = makeElement("h1", null, ["title"], "Services");
-  container.append(header);
+  container.append(imageContainer, header);
 
   return container 
 })();
