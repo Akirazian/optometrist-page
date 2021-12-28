@@ -46,6 +46,6 @@ const procedures = (() => {
   return container;
 })();
 
-services.append(intro, procedures);
+services.append(intro, hr, procedures);
 
 export default services;
